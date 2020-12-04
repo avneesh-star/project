@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="recruiter.master.cs" Inherits="project.recruiter" %>
+<%@ Register TagName="myhead" Src="~/header.ascx" TagPrefix="wuc" %>
+<%@ Register TagName="myfoot" Src="~/footer.ascx" TagPrefix="wuc" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="jquery.js"></script>
+    <link href="menu.css" rel="stylesheet" />
+    <script src="menu.js"></script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <div>
+        <table>
+            <tr>
+                <td>
+                    <wuc:myhead id="h1" runat="server"></wuc:myhead>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="menu">
+		<ul class="menu">
+			
+			<li><a href="recruiterHome.aspx"><span>Home</span></a></li>
+			<li class="last"><a href="logout.aspx"><span>Logout</span></a></li>
+		</ul>
+	</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <center> <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                       </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <wuc:myfoot id="f1" runat="server"></wuc:myfoot>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    </form>
+</body>
+</html>
