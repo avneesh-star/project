@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="course.aspx.cs" Inherits="project.course" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Course Master</title>
     <script type="text/javascript">
         function validation() {
             var msg = "";
@@ -37,7 +38,8 @@
         <tr>
             <td></td>
             <td>
-                <asp:GridView ID="gv_course" runat="server" AutoGenerateColumns="false" OnRowCommand="gv_course_RowCommand">
+                <asp:GridView ID="gv_course" runat="server" AutoGenerateColumns="False" OnRowCommand="gv_course_RowCommand" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="Course ID">
                             <ItemTemplate>
@@ -61,6 +63,15 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
+                    <FooterStyle BackColor="#CCCC99" />
+                    <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                    <RowStyle BackColor="#F7F7DE" />
+                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                    <SortedAscendingHeaderStyle BackColor="#848384" />
+                    <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                    <SortedDescendingHeaderStyle BackColor="#575357" />
                 </asp:GridView>
             </td>
         </tr>

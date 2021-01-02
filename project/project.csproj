@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.2.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.2\lib\net452\BCrypt.Net-Next.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +80,18 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -96,22 +112,35 @@
   <ItemGroup>
     <Content Include="addRecruiter.aspx" />
     <Content Include="adminHome.aspx" />
+    <Content Include="ApplyForm.aspx" />
+    <Content Include="bloodgroup.aspx" />
+    <Content Include="changeRecruiterPassword.aspx" />
+    <Content Include="changeUserPassword.aspx" />
+    <Content Include="city.aspx" />
+    <Content Include="CompanyInfo.aspx" />
     <Content Include="cssjs\bootstrap.min.css" />
     <Content Include="cssjs\bootstrap.min.js" />
     <Content Include="cssjs\dataTables.bootstrap.min.css" />
     <Content Include="cssjs\dataTables.bootstrap.min.js" />
     <Content Include="cssjs\dataTables.responsive.min.js" />
     <Content Include="cssjs\jquery-1.12.4.js" />
+    <Content Include="cssjs\jquery-ui.css" />
+    <Content Include="cssjs\jquery-ui.js" />
     <Content Include="cssjs\jquery.dataTables.min.css" />
     <Content Include="cssjs\jquery.dataTables.min.js" />
     <Content Include="cssjs\responsive.bootstrap.min.css" />
+    <Content Include="email_verification.aspx" />
     <Content Include="images\123-removebg-preview.png" />
     <Content Include="images\123.jpg" />
     <Content Include="images\3.jpg" />
     <Content Include="images\dfdasfa.png" />
     <Content Include="images\sd.jpg" />
+    <Content Include="jobProfile.aspx" />
+    <Content Include="jobs_user.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="logout.aspx" />
+    <Content Include="manageJob.aspx" />
+    <Content Include="managePostedJob.aspx" />
     <Content Include="manageRecruiter.aspx" />
     <Content Include="manageUser.aspx" />
     <Content Include="packages.config" />
@@ -119,7 +148,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="defalt.Master" />
+    <Content Include="post_job.aspx" />
     <Content Include="recruiterHome.aspx" />
+    <Content Include="skills.aspx" />
+    <Content Include="state.aspx" />
     <Content Include="user.Master" />
     <Content Include="recruiter.Master" />
     <Content Include="Admin.Master" />
@@ -150,6 +182,7 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="userHome.aspx" />
     <Content Include="UserRegistration.aspx" />
+    <Content Include="viewCandidate.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +207,48 @@
     <Compile Include="adminHome.aspx.designer.cs">
       <DependentUpon>adminHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ApplyForm.aspx.cs">
+      <DependentUpon>ApplyForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyForm.aspx.designer.cs">
+      <DependentUpon>ApplyForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bloodgroup.aspx.cs">
+      <DependentUpon>bloodgroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bloodgroup.aspx.designer.cs">
+      <DependentUpon>bloodgroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="changeRecruiterPassword.aspx.cs">
+      <DependentUpon>changeRecruiterPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="changeRecruiterPassword.aspx.designer.cs">
+      <DependentUpon>changeRecruiterPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="changeUserPassword.aspx.cs">
+      <DependentUpon>changeUserPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="changeUserPassword.aspx.designer.cs">
+      <DependentUpon>changeUserPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="city.aspx.cs">
+      <DependentUpon>city.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="city.aspx.designer.cs">
+      <DependentUpon>city.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyInfo.aspx.cs">
+      <DependentUpon>CompanyInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyInfo.aspx.designer.cs">
+      <DependentUpon>CompanyInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="country.aspx.cs">
       <DependentUpon>country.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -195,6 +270,13 @@
     <Compile Include="defalt.Master.designer.cs">
       <DependentUpon>defalt.Master</DependentUpon>
     </Compile>
+    <Compile Include="email_verification.aspx.cs">
+      <DependentUpon>email_verification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="email_verification.aspx.designer.cs">
+      <DependentUpon>email_verification.aspx</DependentUpon>
+    </Compile>
     <Compile Include="footer.ascx.cs">
       <DependentUpon>footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,6 +290,20 @@
     </Compile>
     <Compile Include="header.ascx.designer.cs">
       <DependentUpon>header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="jobProfile.aspx.cs">
+      <DependentUpon>jobProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jobProfile.aspx.designer.cs">
+      <DependentUpon>jobProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jobs_user.aspx.cs">
+      <DependentUpon>jobs_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jobs_user.aspx.designer.cs">
+      <DependentUpon>jobs_user.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -223,6 +319,20 @@
     <Compile Include="logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="manageJob.aspx.cs">
+      <DependentUpon>manageJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manageJob.aspx.designer.cs">
+      <DependentUpon>manageJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="managePostedJob.aspx.cs">
+      <DependentUpon>managePostedJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="managePostedJob.aspx.designer.cs">
+      <DependentUpon>managePostedJob.aspx</DependentUpon>
+    </Compile>
     <Compile Include="manageRecruiter.aspx.cs">
       <DependentUpon>manageRecruiter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -236,6 +346,13 @@
     </Compile>
     <Compile Include="manageUser.aspx.designer.cs">
       <DependentUpon>manageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="post_job.aspx.cs">
+      <DependentUpon>post_job.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="post_job.aspx.designer.cs">
+      <DependentUpon>post_job.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="recruiter.Master.cs">
@@ -251,6 +368,20 @@
     </Compile>
     <Compile Include="recruiterHome.aspx.designer.cs">
       <DependentUpon>recruiterHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="skills.aspx.cs">
+      <DependentUpon>skills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="skills.aspx.designer.cs">
+      <DependentUpon>skills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state.aspx.cs">
+      <DependentUpon>state.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state.aspx.designer.cs">
+      <DependentUpon>state.aspx</DependentUpon>
     </Compile>
     <Compile Include="user.Master.cs">
       <DependentUpon>user.Master</DependentUpon>
@@ -273,6 +404,17 @@
     <Compile Include="UserRegistration.aspx.designer.cs">
       <DependentUpon>UserRegistration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="viewCandidate.aspx.cs">
+      <DependentUpon>viewCandidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewCandidate.aspx.designer.cs">
+      <DependentUpon>viewCandidate.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="photo\" />
+    <Folder Include="resume\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -13,12 +13,21 @@ namespace project {
     public partial class userHome {
         
         /// <summary>
-        /// gv_user control.
+        /// lblname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_user;
+        protected global::System.Web.UI.WebControls.Label lblname;
+        
+        /// <summary>
+        /// dl_user control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater dl_user;
     }
 }

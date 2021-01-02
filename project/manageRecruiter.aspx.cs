@@ -15,7 +15,7 @@ namespace project
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["idd"] != null && Session["idd"].ToString() != "")
+            if (Session["aid"] != null && Session["aid"].ToString() != "")
             {
                 if (!IsPostBack)
                 {
@@ -62,9 +62,17 @@ namespace project
                 con.Close();
                 BindData();
             }
-            else
+            
+        }
+
+        
+
+        protected void gv_recruiter_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
             {
-                Response.Redirect("addRecruiter.aspx?rid=" + e.CommandArgument);
+                //add the thead and tbody section programatically
+                e.Row.TableSection = TableRowSection.TableHeader;
             }
         }
     }

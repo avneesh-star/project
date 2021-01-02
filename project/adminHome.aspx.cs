@@ -11,7 +11,7 @@ namespace project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["idd"] != null && Session["idd"].ToString() != "")
+            if (Session["aid"] != null && Session["aid"].ToString() != "")
             {
                 if (!IsPostBack)
                 {

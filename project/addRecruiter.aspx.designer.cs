@@ -31,6 +31,15 @@ namespace project {
         protected global::System.Web.UI.WebControls.TextBox txt_email;
         
         /// <summary>
+        /// pass_row control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow pass_row;
+        
+        /// <summary>
         /// txt_password control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,33 @@ namespace project {
         protected global::System.Web.UI.WebControls.TextBox txt_address;
         
         /// <summary>
+        /// ddl_country control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_country;
+        
+        /// <summary>
+        /// ddl_state control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_state;
+        
+        /// <summary>
+        /// ddl_city control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_city;
+        
+        /// <summary>
         /// btn_save control.
         /// </summary>
         /// <remarks>
@@ -83,5 +119,14 @@ namespace project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_save;
+        
+        /// <summary>
+        /// lblmsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmsg;
     }
 }

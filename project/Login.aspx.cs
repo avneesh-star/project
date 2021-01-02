@@ -34,7 +34,7 @@ namespace project
                 con.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    Session["idd"] = dt.Rows[0]["admin_id"].ToString();
+                    Session["aid"] = dt.Rows[0]["admin_id"].ToString();
                     Response.Redirect("adminHome.aspx");
                 }
                 else
@@ -56,8 +56,17 @@ namespace project
                 con.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    Session["idd"] = dt.Rows[0]["user_id"].ToString();
-                    Response.Redirect("userHome.aspx");
+                    if(dt.Rows[0]["user_status"].ToString()=="1")
+                    {
+                        Session["uid"] = dt.Rows[0]["user_id"].ToString();
+                        Response.Redirect("userHome.aspx");
+                    }
+                    else
+                    {
+                        lbl_msg.Text = "Your account has been suspended by user!!";
+                        lbl_msg.ForeColor = Color.Red;
+                    }
+                    
                 }
                 else
                 {
@@ -78,7 +87,7 @@ namespace project
                 con.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    Session["idd"] = dt.Rows[0]["recruiter_id"].ToString();
+                    Session["rid"] = dt.Rows[0]["recruiter_id"].ToString();
                     Response.Redirect("recruiterHome.aspx");
                 }
                 else

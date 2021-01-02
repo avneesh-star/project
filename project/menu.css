@@ -20,6 +20,11 @@
  */
 
 /* menu::base */
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
 div#menu {
     height:41px;
     background:url(images/main-bg.png) repeat-x;

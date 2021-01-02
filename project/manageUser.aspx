@@ -9,15 +9,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table>
+        
         <tr>
             <td>
-                <a href="UserRegistration.aspx" ><h3>Add New User</h3></a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:GridView ID="gv_user" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" OnRowCommand="gv_user_RowCommand"  OnRowDataBound="gv_user_RowDataBound" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
-                    <AlternatingRowStyle BackColor="White" />
+                <asp:GridView ID="gv_user" runat="server" AutoGenerateColumns="False"  OnRowCommand="gv_user_RowCommand" CssClass="table-sm" OnRowDataBound="gv_user_RowDataBound" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                     <asp:TemplateField HeaderText="User ID">
                         <ItemTemplate>
@@ -44,6 +40,18 @@
                             <%# Eval("course_name") %>
                         </ItemTemplate>
                     </asp:TemplateField>
+                     <asp:TemplateField HeaderText="User Resume">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btn2" runat="server" Text='<%# Eval("user_resume") %>' CommandName="T" CommandArgument='<%# Eval("user_resume") %>'></asp:LinkButton>
+                        </ItemTemplate>
+                        
+                    </asp:TemplateField>
+                     
+                    <asp:TemplateField HeaderText="User Image">
+                        <ItemTemplate>
+                            <asp:Image ID="img1" runat="server" ImageUrl='<%# Eval("user_image","~/photo/{0}") %>' Width="50px" Height="40px"  />
+                        </ItemTemplate>
+                        </asp:TemplateField>
                     <asp:TemplateField HeaderText="Registration Date">
                         <ItemTemplate>
                             <%# Eval("abc") %>
@@ -51,24 +59,21 @@
                     </asp:TemplateField>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="btn_delete" runat="server" Text="Delete" CommandName="D" CommandArgument='<%# Eval("user_id") %>'></asp:LinkButton>
+                            <asp:LinkButton ID="btn_delete" runat="server" Text='<%# Eval("user_status").ToString()=="1"?"Approved":"Not Approved" %>' CommandName="D" CommandArgument='<%# Eval("user_id") %>'></asp:LinkButton>
                             </ItemTemplate>
                     </asp:TemplateField>
-                            <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton ID="btn_edit" runat="server" Text="Edit" CommandName="E" CommandArgument='<%# Eval("user_id") %>'></asp:LinkButton>
-                         </ItemTemplate>
-                    </asp:TemplateField>
+                            
                 </Columns>
-                    <FooterStyle BackColor="#CCCC99" />
-                    <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                    <RowStyle BackColor="#F7F7DE" />
-                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                    <SortedAscendingHeaderStyle BackColor="#848384" />
-                    <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                    <SortedDescendingHeaderStyle BackColor="#575357" />
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"  />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
             </td>
         </tr>

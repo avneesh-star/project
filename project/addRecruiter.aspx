@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/defalt.Master" AutoEventWireup="true" CodeBehind="addRecruiter.aspx.cs" Inherits="project.addRecruiter" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Recruiter Registration</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+  
     <table >
         <tr >
             
@@ -14,10 +15,12 @@
             <td>E-mail:</td>
             <td><asp:TextBox ID="txt_email" runat="server" TextMode="Email"></asp:TextBox></td>
         </tr>
-        <tr >
+       
+        <tr id="pass_row" runat="server">
             <td>Password:</td>
             <td><asp:TextBox ID="txt_password" runat="server" ></asp:TextBox></td>
         </tr>
+           
         <tr >
             <td>Compnay URL:</td>
             <td><asp:TextBox ID="txt_url" runat="server" ></asp:TextBox></td>
@@ -34,13 +37,28 @@
             <td>Address:</td>
             <td><asp:TextBox ID="txt_address" runat="server" ></asp:TextBox></td>
         </tr>
-        <%--<tr>
-            <td>Password:</td>
-            <td><asp:TextBox ID="txt_password" runat="server" ></asp:TextBox></td>
-        </tr>--%>
+        <tr>
+            <td>Country:</td>
+            <td><asp:DropDownList ID="ddl_country" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_countyr_SelectedIndexChanged"></asp:DropDownList></td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td><asp:DropDownList ID="ddl_state" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_state_SelectedIndexChanged"></asp:DropDownList></td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td><asp:DropDownList ID="ddl_city" runat="server"></asp:DropDownList></td>
+        </tr>
         <tr >
             <td></td>
-            <td><asp:Button ID="btn_save" runat="server" Text="Save" OnClientClick="return validation()" OnClick="btn_save_Click" CssClass="btn btn-success btn-block" /></td>
+            <td><asp:Button ID="btn_save" runat="server" Text="Register" OnClientClick="return validation()" OnClick="btn_save_Click"  />
+               <a href="Login.aspx">LogIn</a>
+                
+            </td>
+        </tr>
+        <tr >
+            <td></td>
+            <td><asp:Label ID="lblmsg" runat="server" Font-Bold="false"></asp:Label></td>
         </tr>
         
     </table>
@@ -48,6 +66,7 @@
     <script type="text/javascript">
         function validation() {
             var msg = "";
+            
             msg += checkname();
             msg += checkemail();
             msg += checkpassword();

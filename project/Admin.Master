@@ -7,12 +7,20 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
     <script src="jquery.js"></script>
     <link href="menu.css" rel="stylesheet" />
     <script src="menu.js"></script>
-    <link href="cssjs/bootstrap.min.css" rel="stylesheet" />
-    <script src="cssjs/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/dataTables.bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/responsive/1.0.7/css/responsive.bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/1.0.7/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -31,16 +39,32 @@
                             <ul class="menu">
 
                                 <li><a href="adminHome.aspx"><span>Home</span></a></li>
+                                <li><a href="manageUser.aspx"><span>Manage User</span></a></li>
                                 <li><a href="manageRecruiter.aspx"><span>Manage Recruiter</span></a></li>
-                                <%--<li><a href="country.aspx"><span>Country</span></a></li>
-                                <li><a href="course.aspx"><span>Course</span></a></li>--%>
-
+                                
+                                <li><a href="manageJob.aspx"><span>Manage Posted Job</span></a></li>
+                                <li><a href="#" class="parent"><span>Manage Master Data</span></a>
+                                    <div><ul>
+					                    <li><a href="country.aspx" ><span>Manage Country</span></a></li>
+                                        <li><a href="state.aspx"><span>Manage State</span></a></li>
+                                        <li><a href="city.aspx"><span>Manage City</span></a></li>
+                                        <li><a href="course.aspx"><span>Manage Qualification</span></a></li>
+                                        <li><a href="jobProfile.aspx"><span>Mange Job Profiles</span></a></li>
+                                        <li><a href="skills.aspx"><span>Manage Skills</span></a></li>
+                                        
+                                        </ul>
+                                        </div>
+					
+                                </li>
+                               
+<%--                                <li><a href="bloodgroup.aspx"><span>Manage Blood Group</span></a></li> --%>   
+                                
                                 <li class="last"><a href="logout.aspx"><span>Logout</span></a></li>
                             </ul>
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <tr style="height:60vh">
                     <td>
                         <center> <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
@@ -48,7 +72,7 @@
                        </center>
                     </td>
                 </tr>
-                <tr>
+                <tr style="height=1vh">
                     <td>
                         <wuc:myfoot ID="f1" runat="server"></wuc:myfoot>
                     </td>

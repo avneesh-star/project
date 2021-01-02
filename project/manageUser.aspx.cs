@@ -15,7 +15,7 @@ namespace project
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["idd"] != null && Session["idd"].ToString() != "")
+            if (Session["aid"] != null && Session["aid"].ToString() != "")
             {
                 if (!IsPostBack)
                 {
@@ -72,10 +72,11 @@ namespace project
                 con.Close();
                 BindGrid();
             }
-            else
+            else if (e.CommandName == "T")
             {
-                Response.Redirect("UserRegistration.aspx?uid="+e.CommandArgument);
+                Response.Redirect("resume" + "\\" + e.CommandArgument);
             }
+
         }
     }
     

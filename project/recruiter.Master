@@ -9,14 +9,21 @@
     <script src="jquery.js"></script>
     <link href="menu.css" rel="stylesheet" />
     <script src="menu.js"></script>
-    
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/dataTables.bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/responsive/1.0.7/css/responsive.bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/1.0.7/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
      <div>
-        <table>
+        <table style="width:100%">
             <tr>
                 <td>
                     <wuc:myhead id="h1" runat="server"></wuc:myhead>
@@ -28,13 +35,16 @@
 		<ul class="menu">
 			
 			<li><a href="recruiterHome.aspx"><span>Home</span></a></li>
+            <li><a href="viewCandidate.aspx"><span>View Candidate</span></a></li>
+             <li><a href="managePostedJob.aspx"><span>Manage Posted Job</span></a></li>
+            <li><a href="changeRecruiterPassword.aspx"><span>Change Password</span></a></li>
 			<li class="last"><a href="logout.aspx"><span>Logout</span></a></li>
 		</ul>
 	</div>
                 </td>
             </tr>
-            <tr>
-                <td>
+            <tr style="height:60vh;">
+                <td >
                    <center> <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
