@@ -195,18 +195,18 @@ namespace project
 
         public string token()
         {
-            //byte[] time = BitConverter.GetBytes(DateTime.UtcNow.ToBinary());
-            //byte[] key = Guid.NewGuid().ToByteArray();
-            //string token = Convert.ToBase64String(time.Concat(key).ToArray());
-            //return token;
-            var allChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            var random = new Random();
-            var resultToken = new string(
-               Enumerable.Repeat(allChar, 32)
-               .Select(token => token[random.Next(token.Length)]).ToArray());
+            byte[] time = BitConverter.GetBytes(DateTime.UtcNow.ToBinary());
+            byte[] key = Guid.NewGuid().ToByteArray();
+            string token = Convert.ToBase64String(time.Concat(key).ToArray());
+            return token;
+            //var allChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            //var random = new Random();
+            //var resultToken = new string(
+            //   Enumerable.Repeat(allChar, 32)
+            //   .Select(token => token[random.Next(token.Length)]).ToArray());
 
-            string authToken = resultToken.ToString();
-            return authToken;
+            //string authToken = resultToken.ToString();
+            //return authToken;
         }
         public int checkMail(string str)
         {
@@ -281,23 +281,24 @@ namespace project
                             con.Close();
                             if (i > 0)
                             {
-                                 MailAddress bcc = new MailAddress("avneesh.gangwar@outlook.com");
-                                 using (MailMessage mm = new MailMessage("awaneeshkumar051@gmail.com", txt_email.Text))
-                                 {
-                                     mm.Subject = "Verification Mail";
-                                     mm.Body ="Hi,"+ txt_name.Text + "please click http://localhost:49747/email_verification.aspx?token="+ tkn + " here to veify your mail";
-                                     mm.CC.Add(bcc);
-                                     mm.IsBodyHtml = true;
-                                     SmtpClient smtp = new SmtpClient();
-                                     smtp.Host = "smtp.gmail.com";
-                                     smtp.EnableSsl = true;
-                                     NetworkCredential NetworkCred = new NetworkCredential("awaneeshkumar051@gmail.com","Akg@4321");
-                                     smtp.UseDefaultCredentials = true;
-                                     smtp.Credentials = NetworkCred;
-                                     smtp.Port = 25;
-                                     smtp.Send(mm);
-                                     ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Your registration has been done. Kindly check your mail');", true);
-                                 }
+                                MailAddress bcc = new MailAddress("avneesh.gangwar@outlook.com");
+                                using (MailMessage mm = new MailMessage("awaneeshkumar051@gmail.com", txt_email.Text))
+                                {
+                                    mm.Subject = "Verification Mail";
+                                    mm.Body = "Hi," + txt_name.Text + "please click http://localhost:49747/email_verification.aspx?token=" + Server.UrlEncode(tkn) + " here to veify your mail";
+                                    mm.CC.Add(bcc);
+                                    mm.IsBodyHtml = true;
+                                    SmtpClient smtp = new SmtpClient();
+                                    smtp.Host = "smtp.gmail.com";
+                                    smtp.EnableSsl = true;
+                                    NetworkCredential NetworkCred = new NetworkCredential("awaneeshkumar051@gmail.com", "Akg@4321");
+                                    smtp.UseDefaultCredentials = true;
+                                    smtp.Credentials = NetworkCred;
+                                    smtp.Port = 25;
+                                    smtp.Send(mm);
+                                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Your registration has been done. Kindly check your mail');", true);
+                                    Session["msg"] = "Please cheack your mail to verify your E-Mail then login!!";
+                                }
                                 Response.Write("<script>window.location='Login.aspx';</script>");
                                 clear();
                             }
@@ -359,6 +360,7 @@ namespace project
                         }
                         else
                         {
+                            cmd.Parameters.AddWithValue("@user_image", ViewState["image"]);
                             lblmsg.ForeColor = Color.Red;
                             lblmsg.Text = "please upload only jpg,jpeg or png files for photo !!";
                         }
@@ -380,6 +382,7 @@ namespace project
                         }
                         else
                         {
+                            cmd.Parameters.AddWithValue("@user_resume", ViewState["rsm"]);
                             lblmsg.ForeColor = Color.Red;
                             lblmsg.Text = "please upload only doc, docx or pdf file for resume !!";
                         }

@@ -10,42 +10,42 @@
 namespace project {
     
     
-    public partial class adminHome {
+    public partial class resetUserPassword {
         
         /// <summary>
-        /// lbl_rec_count control.
+        /// txtNewpass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_rec_count;
+        protected global::System.Web.UI.WebControls.TextBox txtNewpass;
         
         /// <summary>
-        /// active_rec control.
+        /// txtCnewpass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label active_rec;
+        protected global::System.Web.UI.WebControls.TextBox txtCnewpass;
         
         /// <summary>
-        /// lbl_total_user control.
+        /// btn_rest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_user;
+        protected global::System.Web.UI.WebControls.Button btn_rest;
         
         /// <summary>
-        /// lbl_active_user control.
+        /// lblMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_active_user;
+        protected global::System.Web.UI.WebControls.Label lblMsg;
     }
 }

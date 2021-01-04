@@ -10,42 +10,60 @@
 namespace project {
     
     
-    public partial class adminHome {
+    public partial class forgotpassword {
         
         /// <summary>
-        /// lbl_rec_count control.
+        /// lbltype control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_rec_count;
+        protected global::System.Web.UI.WebControls.Label lbltype;
         
         /// <summary>
-        /// active_rec control.
+        /// ddl_user_type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label active_rec;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_user_type;
         
         /// <summary>
-        /// lbl_total_user control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_user;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// lbl_active_user control.
+        /// txt_mail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_active_user;
+        protected global::System.Web.UI.WebControls.TextBox txt_mail;
+        
+        /// <summary>
+        /// btn_send control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_send;
+        
+        /// <summary>
+        /// lbl_msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_msg;
     }
 }

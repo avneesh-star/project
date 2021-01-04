@@ -20,7 +20,8 @@
     <script src="jquery.js"></script>
     <link href="menu.css" rel="stylesheet" />
     <script src="menu.js"></script>
-    
+    <link href="cssjs/Style.css" rel="stylesheet" />
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -39,6 +40,11 @@
                     <td>
                         <div id="menu">
                             <ul class="menu">
+                                <li><a href="#" class="parent"><span>Sign UP</span></a>
+                                    <div><ul>
+					                    <li><a href="UserRegistration.aspx" ><span>Job Seeker SignUP</span></a></li>
+                                        <li><a href="addRecruiter.aspx"><span>Recruiter SinghUP</span></a></li>
+                                        </ul></div></li>
                             </ul>
                         </div>
                     </td>

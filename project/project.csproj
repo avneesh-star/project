@@ -129,7 +129,9 @@
     <Content Include="cssjs\jquery.dataTables.min.css" />
     <Content Include="cssjs\jquery.dataTables.min.js" />
     <Content Include="cssjs\responsive.bootstrap.min.css" />
+    <Content Include="cssjs\Style.css" />
     <Content Include="email_verification.aspx" />
+    <Content Include="forgotpassword.aspx" />
     <Content Include="images\123-removebg-preview.png" />
     <Content Include="images\123.jpg" />
     <Content Include="images\3.jpg" />
@@ -150,11 +152,16 @@
     <Content Include="defalt.Master" />
     <Content Include="post_job.aspx" />
     <Content Include="recruiterHome.aspx" />
+    <Content Include="recruiter_mail_verification.aspx" />
+    <Content Include="resetRecuiterPassword.aspx" />
+    <Content Include="resetUserPassword.aspx" />
     <Content Include="skills.aspx" />
     <Content Include="state.aspx" />
     <Content Include="user.Master" />
     <Content Include="recruiter.Master" />
     <Content Include="Admin.Master" />
+    <None Include="Properties\PublishProfiles\avn - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\avn - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,7 +190,9 @@
     <Content Include="userHome.aspx" />
     <Content Include="UserRegistration.aspx" />
     <Content Include="viewCandidate.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addRecruiter.aspx.cs">
@@ -284,6 +293,13 @@
     <Compile Include="footer.ascx.designer.cs">
       <DependentUpon>footer.ascx</DependentUpon>
     </Compile>
+    <Compile Include="forgotpassword.aspx.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.designer.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="header.ascx.cs">
       <DependentUpon>header.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -368,6 +384,27 @@
     </Compile>
     <Compile Include="recruiterHome.aspx.designer.cs">
       <DependentUpon>recruiterHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruiter_mail_verification.aspx.cs">
+      <DependentUpon>recruiter_mail_verification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruiter_mail_verification.aspx.designer.cs">
+      <DependentUpon>recruiter_mail_verification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="resetRecuiterPassword.aspx.cs">
+      <DependentUpon>resetRecuiterPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resetRecuiterPassword.aspx.designer.cs">
+      <DependentUpon>resetRecuiterPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="resetUserPassword.aspx.cs">
+      <DependentUpon>resetUserPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resetUserPassword.aspx.designer.cs">
+      <DependentUpon>resetUserPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="skills.aspx.cs">
       <DependentUpon>skills.aspx</DependentUpon>

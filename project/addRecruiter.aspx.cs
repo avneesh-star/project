@@ -8,6 +8,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Drawing;
+using System.Net;
+using System.Net.Mail;
 
 namespace project
 {
@@ -86,10 +88,19 @@ namespace project
             return dt.Rows.Count;
 
         }
+
+        public string token()
+        {
+            byte[] time = BitConverter.GetBytes(DateTime.UtcNow.ToBinary());
+            byte[] key = Guid.NewGuid().ToByteArray();
+            string token = Convert.ToBase64String(time.Concat(key).ToArray());
+            return token;
+        }
         protected void btn_save_Click(object sender, EventArgs e)
         {
             if (btn_save.Text == "Register")
             {
+                string tkn = token();
                 int num = checkMail(txt_email.Text);
                 if(num>0)
                 {
@@ -111,13 +122,31 @@ namespace project
                     cmd.Parameters.AddWithValue("@countryID",ddl_country.SelectedValue );
                     cmd.Parameters.AddWithValue("@stateID", ddl_state.SelectedValue);
                     cmd.Parameters.AddWithValue("@cityID", ddl_city.SelectedValue);
+                    cmd.Parameters.AddWithValue("@token", tkn);
                     int res = cmd.ExecuteNonQuery();
                     con.Close();
                     if (res > 0)
                     {
-                        Response.Write("<script>alert('Registraion done successfully!!');window.location='Login.aspx';</script>");
 
-                        //Response.Redirect("Login.aspx");
+                        MailAddress bcc = new MailAddress("avneesh.gangwar@outlook.com");
+                        using (MailMessage mm = new MailMessage("awaneeshkumar051@gmail.com", txt_email.Text))
+                        {
+                            mm.Subject = "Verification Mail";
+                            mm.Body = "Hi," + txt_company_name.Text + "please click http://localhost:49747/recruiter_mail_verification.aspx?token=" + Server.UrlEncode(tkn) + " here to veify your mail";
+                            mm.CC.Add(bcc);
+                            mm.IsBodyHtml = true;
+                            SmtpClient smtp = new SmtpClient();
+                            smtp.Host = "smtp.gmail.com";
+                            smtp.EnableSsl = true;
+                            NetworkCredential NetworkCred = new NetworkCredential("awaneeshkumar051@gmail.com", "Akg@4321");
+                            smtp.UseDefaultCredentials = true;
+                            smtp.Credentials = NetworkCred;
+                            smtp.Port = 25;
+                            smtp.Send(mm);
+                            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Your registration has been done. Kindly check your mail');", true);
+                            Session["msg"] = "Please cheack your mail to verify your E-Mail then login!!";
+                        }
+                        Response.Write("<script>window.location='Login.aspx';</script>");                       
                     }
                 }
                 
