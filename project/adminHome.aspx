@@ -30,7 +30,7 @@
       <div class="circle-tile ">
         <a href="#"><div class="circle-tile-heading green"><i class="fa fa-users fa-fw fa-3x"></i></div></a>
         <div class="circle-tile-content green">
-          <div class="circle-tile-description text-faded"> Total Job Seeker</div>
+          <div class="circle-tile-description text-faded"> Registered Job Seeker</div>
           <div class="circle-tile-number text-faded "><asp:Label ID="lbl_total_user" runat="server"></asp:Label></div>
           
         </div>
