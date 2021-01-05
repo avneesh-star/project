@@ -105,7 +105,7 @@ namespace project
                             SmtpClient smtp = new SmtpClient();
                             smtp.Host = "smtp.gmail.com";
                             smtp.EnableSsl = true;
-                            NetworkCredential NetworkCred = new NetworkCredential("awaneeshkumar051@gmail.com", "Akg@4321");
+                            NetworkCredential NetworkCred = new NetworkCredential("awaneeshkumar051@gmail.com", "password");
                             smtp.UseDefaultCredentials = true;
                             smtp.Credentials = NetworkCred;
                             smtp.Port = 25;
